@@ -31,8 +31,8 @@
 
 @interface FLImageView()
 
-@property (nonatomic) NSURL *url;
-@property (nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, retain, readwrite) UIActivityIndicatorView *activityIndicatorView;
 
 - (void)populateImage:(UIImage *)image;
 - (void)setLoading:(BOOL)isLoading;
@@ -53,6 +53,7 @@ shouldUnscheduleURLOnReuse  = _shouldUnscheduleURLOnReuse;
 
 - (void)dealloc {
     self.url = nil; // removes observer
+    [super dealloc];
 }
 
 
