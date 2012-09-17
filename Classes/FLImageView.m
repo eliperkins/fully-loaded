@@ -53,7 +53,6 @@ shouldUnscheduleURLOnReuse  = _shouldUnscheduleURLOnReuse;
 
 - (void)dealloc {
     self.url = nil; // removes observer
-    [super dealloc];
 }
 
 
